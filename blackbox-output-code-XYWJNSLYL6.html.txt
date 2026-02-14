@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine Proposal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FF0000; /* Valentine red */
+            color: white;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+            position: relative;
+            overflow: hidden;
+        }
+        /* Roses design: Simple CSS hearts and petals */
+        .rose {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: #FFC0CB; /* Pink petals */
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            animation: float 6s ease-in-out infinite;
+        }
+        .rose:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+        .rose:nth-child(2) { top: 20%; right: 15%; animation-delay: 2s; }
+        .rose:nth-child(3) { top: 60%; left: 20%; animation-delay: 4s; }
+        .rose:nth-child(4) { top: 80%; right: 10%; animation-delay: 1s; }
+        .rose:nth-child(5) { top: 40%; left: 70%; animation-delay: 3s; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+        button {
+            background-color: #FFFFFF;
+            color: #FF0000;
+            border: 2px solid #FF0000;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #FFCCCC;
+        }
+        #response {
+            font-size: 1.5em;
+            margin-top: 30px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating roses -->
+    <div class="rose"></div>
+    <div class="rose"></div>
+    <div class="rose"></div>
+    <div class="rose"></div>
+    <div class="rose"></div>
+
+    <h1>mariomty will you be my valentien ?</h1>
+    <button id="yesBtn">Yes</button>
+    <button id="noBtn">No</button>
+    <div id="response"></div>
+
+    <script>
+        const yesBtn = document.getElementById('yesBtn');
+        const noBtn = document.getElementById('noBtn');
+        const response = document.getElementById('response');
+
+        yesBtn.addEventListener('click', () => {
+            response.textContent = "i’m waiting down for you";
+            response.style.display = 'block';
+        });
+
+        noBtn.addEventListener('click', () => {
+            response.textContent = "Maybe next time!";
+            response.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
